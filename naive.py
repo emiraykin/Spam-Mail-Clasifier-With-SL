@@ -1,23 +1,27 @@
 import pandas as pd
 #Data collection and Preproccessing
 #loading data from csv file to a pandas dataframe
-file ='spam.csv'
+file ='spam_ham_dataset.csv'
 import chardet
 with open(file, 'rb') as rawdata:
     result = chardet.detect(rawdata.read(100000))
 result
 
-df= pd.read_csv(file,encoding='Windows-1252')
+df= pd.read_csv(file)
 df.head()
 
 
 # # Data Cleaning
 
 df.info()
-df.drop(columns=['Unnamed: 2','Unnamed: 3','Unnamed: 4'],inplace=True)
+print(df)
+df = df.drop('Unnamed: 0', axis=1)
+df = df.drop('label_num', axis=1)
+print(df)
 df.sample(5)
+df.shape
 
-df.rename(columns={'v1':'Category','v2':'Text'},inplace=True)
+df.rename(columns={'v1':'label','v2':'text'},inplace=True)
 df.sample(5)
 
 
@@ -26,15 +30,12 @@ encoder=LabelEncoder()
 
 
 #labeling spam mail as 0; ham mail as 1
-
-df.loc[df['Category']=='spam','Category',]=0
-df.loc[df['Category']=='ham','Category',]=1
-
+df.loc[df['label']=='spam','label',]=0
+df.loc[df['label']=='ham','label',]=1
 #seperating the data as texts and label
 
-X = df['Text']
-Y = df['Category']
-
+X = df['text']
+Y = df['label']
 
 #print(X)
 
@@ -110,6 +111,16 @@ print('Accuracy on test data : ',accuracy_on_test_data)
 # #making prediction
 # prediction = model.predict(input_data_features)
 # print(prediction)
+input_data_features = feature_extraction.transform(["OK, I'm waiting you at the Central Park"])
+prediction = model.predict(input_data_features)
+
+if prediction == 1:
+    print("HAM")
+else:
+    print( "SPAM")
+
+
+
 
 def naive_predict_spam(input_mail):
     input_data_features = feature_extraction.transform(input_mail)

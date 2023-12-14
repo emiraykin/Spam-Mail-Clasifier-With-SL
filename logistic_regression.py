@@ -8,15 +8,19 @@ from sklearn.preprocessing import LabelEncoder
 import chardet
 #Data collection and Preproccessing
 #loading data from csv file to a pandas dataframe
-file ='spam.csv'
+file ='spam_ham_dataset.csv'
 
 with open(file, 'rb') as rawdata:
     result = chardet.detect(rawdata.read(100000))
 result
 
-df= pd.read_csv(file,encoding='Windows-1252')
+df= pd.read_csv(file)
 
-#print(df)
+print(df)
+df = df.drop('Unnamed: 0', axis=1)
+df = df.drop('label_num', axis=1)
+print(df)
+
 
 #df.sample(5)
 
@@ -33,26 +37,24 @@ df.shape
 
 df.info()
 
-df.drop(columns=['Unnamed: 2','Unnamed: 3','Unnamed: 4'],inplace=True)
-
 df.sample(5)
 
-df.rename(columns={'v1':'Category','v2':'Text'},inplace=True)
+df.rename(columns={'v1':'label','v2':'text'},inplace=True)
 df.sample(5)
 
 
 encoder=LabelEncoder()
 
-df.loc[df['Category']=='spam','Category',]=0
-df.loc[df['Category']=='ham','Category',]=1
+df.loc[df['label']=='spam','label',]=0
+df.loc[df['label']=='ham','label',]=1
 
 df.sample(5)
 
 
 #seperating the data as texts and label
 
-X = df['Text']
-Y = df['Category']
+X = df['text']
+Y = df['label']
 
 #print(X)
 

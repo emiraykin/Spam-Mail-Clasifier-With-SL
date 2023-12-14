@@ -111,7 +111,7 @@ print('Accuracy on test data : ',accuracy_on_test_data)
 # prediction = model.predict(input_data_features)
 # print(prediction)
 
-def predict_spam_2(input_mail):
+def naive_predict_spam(input_mail):
     input_data_features = feature_extraction.transform(input_mail)
     prediction = model.predict(input_data_features)
 

@@ -1,0 +1,6 @@
+backend:
+1- add knn (knn.py should change, currently same as logistic regression except function names and endpoint url)
+2- add import database ()
+
+frontend:
+1- 

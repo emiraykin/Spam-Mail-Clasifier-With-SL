@@ -33,20 +33,30 @@ input{
     border: none;
     border-radius: 10px;
     font-family: 'Labrada', sans-serif;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 input:focus{
     border: solid 5px #000000;
 }
 
-#sendButton,#sendButton_0{
+#sendButton_lr,#sendButton_nb,#sendButton_knn{
     background-color: rgb(20, 125, 216);
     width: 200px;
 }
 
-#sendButton,#sendButton_0: hover{
+
+#sendButton_lr,#sendButton_nb,#sendButton_knn: hover{
     background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
+#importButton_db1,#importButton_db2{
+    background-color: rgb(20, 125, 216);
+    width: 324px;
+}
+
+#importButton_db1,#importButton_db2: hover{
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}

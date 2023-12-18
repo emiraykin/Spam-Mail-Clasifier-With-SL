@@ -1,18 +1,18 @@
 body{
-    background-color: seagreen;
+    background-color: rgb(169, 236, 236);
     text-align: center;
 }
 
 h2{
-    color: rgb(255, 255, 255);
-    font-family: 'San Marino Beach', sans-serif;
+    color: rgb(20, 125, 216);
+    font-family: 'Vintage Capital', sans-serif;
     font-size: 2.9em;
     margin: 20px;
 }
 
 h3{
     color: rgb(0, 0, 0);
-    font-family: 'Hotabe', sans-serif;
+    font-family: 'Labrada', sans-serif;
     font-size: 2.1em;
     margin: 20px;
 }
@@ -20,8 +20,8 @@ h3{
 
 
 p{
-    color: rgb(255, 255, 255);
-    font-family: 'San Marino Beach', sans-serif;
+    color: rgb(20, 125, 216);
+    font-family: 'Vintage Capital', sans-serif;
     font-size: 1.4em;
     margin: 20px;
 }
@@ -32,8 +32,8 @@ input{
     margin: 20px;
     border: none;
     border-radius: 10px;
-    font-family: 'Hotabe', sans-serif;
-    font-size: 2.1em;
+    font-family: 'Labrada', sans-serif;
+    font-size: 1.7em;
 }
 
 input:focus{
@@ -41,12 +41,12 @@ input:focus{
 }
 
 #sendButton,#sendButton_0{
-    background-color: aquamarine;
+    background-color: rgb(20, 125, 216);
     width: 200px;
 }
 
 #sendButton,#sendButton_0: hover{
-    background-color: rgb(146, 172, 163);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
 

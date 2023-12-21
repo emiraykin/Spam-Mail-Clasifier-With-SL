@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelEncoder
 import chardet
 #Data collection and Preproccessing
 #loading data from csv file to a pandas dataframe
-file ='spam_ham_dataset.csv'
+file ='dataset1.csv'
 
 with open(file, 'rb') as rawdata:
     result = chardet.detect(rawdata.read(100000))
@@ -122,10 +122,20 @@ print('Accuracy on test data : ',accuracy_on_test_data)
 # prediction = model.predict(input_data_features)
 # print(prediction)
 
-def knn_predict_spam(mail):
-    input_data_features = feature_extraction.transform(mail)
-    prediction = model.predict(input_data_features)
+def knn_predict_spam(mail,dbNumber):
+    if(dbNumber==1):
+        input_data_features = feature_extraction1.transform(mail)
+        prediction = model1.predict(input_data_features)
+        if prediction == 1 :
+            return "HAM",accuracy_on_test_data1, accuracy_on_training_data1
+        return "SPAM",accuracy_on_test_data1, accuracy_on_training_data1   
 
-    if prediction == 1:
-        return "HAM",accuracy_on_test_data, accuracy_on_training_data
-    return "SPAM",accuracy_on_test_data, accuracy_on_training_data    
+    elif(dbNumber==2):
+        input_data_features = feature_extraction2.transform(mail)
+        prediction = model2.predict(input_data_features)
+        if prediction == 1 :
+            return "HAM",accuracy_on_test_data2, accuracy_on_training_data2
+        return "SPAM",accuracy_on_test_data2, accuracy_on_training_data2
+    else:
+        return "-1", None , None 
+    

@@ -47,18 +47,18 @@ def knn_controller():
     flash(f"This email is {result}")
     return render_template("index.html", test_acc=test_acc, train_acc=train_acc)
 
-@classifierApp.route("/databaseController_1", methods=['POST', 'GET'])
+@classifierApp.route("/datasetController_1", methods=['POST', 'GET'])
 def import_db_1():
     global dbNumber
     dbNumber = 1
-    flash("database 1 will be imported here")
+    flash("dataset 1 will be imported here")
     return render_template("index.html", test_acc=0, train_acc=0)
 
-@classifierApp.route("/databaseController_2", methods=['POST', 'GET'])
+@classifierApp.route("/datasetController_2", methods=['POST', 'GET'])
 def import_db_2():
     global dbNumber
     dbNumber = 2
-    flash("database 2 will be imported here")
+    flash("dataset 2 will be imported here")
     return render_template("index.html", test_acc=0, train_acc=0)
 
 if __name__ == '__main__':

@@ -176,15 +176,15 @@ print('Accuracy on test data : ',accuracy_on_test_data2)
 # prediction = model.predict(input_data_features)
 # print(prediction)
 
-def lr_predict_spam(mail,dbNumber):
-    if(dbNumber==1):
+def lr_predict_spam(mail,dsNumber):
+    if(dsNumber==1):
         input_data_features = feature_extraction1.transform(mail)
         prediction = model1.predict(input_data_features)
         if prediction == 1 :
             return "HAM",accuracy_on_test_data1, accuracy_on_training_data1
         return "SPAM",accuracy_on_test_data1, accuracy_on_training_data1   
 
-    elif(dbNumber==2):
+    elif(dsNumber==2):
         input_data_features = feature_extraction2.transform(mail)
         prediction = model2.predict(input_data_features)
         if prediction == 1 :

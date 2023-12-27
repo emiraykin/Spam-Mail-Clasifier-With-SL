@@ -71,10 +71,9 @@ model1.fit(X_train_features1, Y_train1)
 
 
 # prediction on training data
-prediction_on_training_data1 = model1.predict(X_train_features1)
-accuracy_on_training_data1 = accuracy_score(Y_train1, prediction_on_training_data1)
-
-
+prediction_on_training_data1 = model1.predict_proba(X_train_features1)
+prediction1 = [1 if np.any(i > 0.1) else 0 for i in prediction_on_training_data1]
+accuracy_on_training_data1 = accuracy_score(Y_train1, prediction1)
 
 print('Accuracy on training data : ',accuracy_on_training_data1)
 

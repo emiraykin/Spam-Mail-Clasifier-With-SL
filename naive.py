@@ -42,7 +42,7 @@ X_train1, X_test1, Y_train1, Y_test1 = train_test_split(X,Y,test_size=0.2,random
 #print(X_train.shape)
 #print(X_test.shape)
 
-#we will transform the text data to feature vectors that can be used as input to the Logistic Regression Model
+
 feature_extraction1 = TfidfVectorizer(min_df = 1, stop_words='english', lowercase=True)
 X_train_features1 = feature_extraction1.fit_transform(X_train1)
 X_test_features1 = feature_extraction1.transform(X_test1)
@@ -181,9 +181,6 @@ print('Accuracy on test data : ',accuracy_on_test_data2)
 # #making prediction
 # prediction = model.predict(input_data_features)
 # print(prediction)
-
-
-
 
 def naive_predict_spam(input_mail,dsNumber):
     if(dsNumber==1):

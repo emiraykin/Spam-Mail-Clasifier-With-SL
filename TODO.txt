@@ -1,6 +1,7 @@
 backend:
-1- add knn (knn.py should change, currently same as logistic regression except function names and endpoint url)
-2- add import database ()
+1- Calculate training time for eache model and dataset
+2- 
 
 frontend:
-1- 
+1- Print training training time for eache model and dataset
+2- accuracy rate seems same on training and test data. (BUG)

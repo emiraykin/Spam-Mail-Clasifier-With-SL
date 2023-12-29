@@ -81,9 +81,7 @@ print('Accuracy on training data : ',accuracy_on_training_data1)
 prediction_on_test_data1 = model1.predict(X_test_features1)
 accuracy_on_test_data1 = accuracy_score(Y_test1, prediction_on_test_data1)
 
-
 print('Accuracy on test data : ',accuracy_on_test_data1)
-
 
 # FOR DATASET2
 
@@ -117,11 +115,6 @@ Y = df2['label']
 #Splitting the data into training data & test data
 X_train2, X_test2, Y_train2, Y_test2 = train_test_split(X,Y,test_size=0.2,random_state=3)
 
-
-#print(X.shape)
-#print(X_train.shape)
-#print(X_test.shape)
-
 #we will transform the text data to feature vectors that can be used as input to the Logistic Regression Model
 feature_extraction2 = TfidfVectorizer(min_df = 1, stop_words='english', lowercase=True)
 X_train_features2 = feature_extraction2.fit_transform(X_train2)
@@ -130,7 +123,6 @@ X_test_features2= feature_extraction2.transform(X_test2)
 
 Y_train2 = Y_train2.astype('int')
 Y_test2 = Y_test2.astype('int')
-
 
 # print(X_train_features)
 
@@ -143,15 +135,11 @@ model2 = LogisticRegression()
 #training the Logistic Regression model with the training data
 model2.fit(X_train_features2, Y_train2)
 
-
 # # Evaluating the trained model
-
 
 # prediction on training data
 prediction_on_training_data2 = model2.predict(X_train_features2)
 accuracy_on_training_data2 = accuracy_score(Y_train2, prediction_on_training_data2)
-
-
 
 print('Accuracy on training data : ',accuracy_on_training_data2)
 
@@ -159,14 +147,9 @@ print('Accuracy on training data : ',accuracy_on_training_data2)
 prediction_on_test_data2 = model2.predict(X_test_features2)
 accuracy_on_test_data2 = accuracy_score(Y_test2, prediction_on_test_data2)
 
-
 print('Accuracy on test data : ',accuracy_on_test_data2)
 
-
-
-
 # # Building a Predictive System 
-
 
 # input_mail=["Free entry in 2 a wkly comp to win."]
 # #converting text to feature vectors

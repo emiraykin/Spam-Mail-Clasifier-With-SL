@@ -4,4 +4,4 @@ backend:
 
 frontend:
 1- Print training training time for eache model and dataset
-2- accuracy rate seems same on training and test data. (BUG)
+2- 

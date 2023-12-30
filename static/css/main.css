@@ -17,8 +17,6 @@ h3{
     margin: 20px;
 }
 
-
-
 p{
     color: rgb(20, 125, 216);
     font-family: 'Vintage Capital', sans-serif;
@@ -45,7 +43,6 @@ input:focus{
     width: 200px;
 }
 
-
 #sendButton_lr,#sendButton_nb,#sendButton_knn: hover{
     background-color: rgb(255, 255, 255);
     cursor: pointer;
@@ -57,6 +54,16 @@ input:focus{
 }
 
 #importButton_db1,#importButton_db2: hover{
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#timer_button{
+    background-color: rgb(20, 125, 216);
+    width: 200px;
+}
+
+#timer_button: hover{
     background-color: rgb(255, 255, 255);
     cursor: pointer;
 }

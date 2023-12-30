@@ -8,6 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 import chardet
 #Data collection and Preproccessing
 #loading data from csv file to a pandas dataframe
+timer_data = 0
 file1 ='dataset1.csv'
 with open(file1, 'rb') as rawdata:
     result = chardet.detect(rawdata.read(100000))
@@ -163,19 +164,14 @@ def lr_predict_spam(mail,dsNumber):
         input_data_features = feature_extraction1.transform(mail)
         prediction = model1.predict(input_data_features)
         if prediction == 1 :
-            return "HAM",accuracy_on_test_data1, accuracy_on_training_data1
-        return "SPAM",accuracy_on_test_data1, accuracy_on_training_data1   
+            return "HAM",accuracy_on_test_data1, accuracy_on_training_data1, timer_data
+        return "SPAM",accuracy_on_test_data1, accuracy_on_training_data1, timer_data
 
     elif(dsNumber==2):
         input_data_features = feature_extraction2.transform(mail)
         prediction = model2.predict(input_data_features)
         if prediction == 1 :
-            return "HAM",accuracy_on_test_data2, accuracy_on_training_data2
-        return "SPAM",accuracy_on_test_data2, accuracy_on_training_data2
+            return "HAM",accuracy_on_test_data2, accuracy_on_training_data2, timer_data
+        return "SPAM",accuracy_on_test_data2, accuracy_on_training_data2, timer_data
     else:
-        return "-1", None , None 
-    
-  
-    
-
-
+        return "-1", None , None, None

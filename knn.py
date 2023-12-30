@@ -7,6 +7,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
 #Data collection and Preproccessing
 #loading data from csv file to a pandas dataframe
+timer_data = 0
 file1 ='dataset1.csv'
 with open(file1, 'rb') as rawdata:
     result = chardet.detect(rawdata.read(100000))
@@ -188,17 +189,14 @@ def knn_predict_spam(input_mail,dsNumber):
         input_data_features = feature_extraction1.transform(input_mail)
         prediction = model1.predict(input_data_features)
         if prediction == 1 :
-            return "HAM",accuracy_on_test_data1, accuracy_on_training_data1
-        return "SPAM",accuracy_on_test_data1, accuracy_on_training_data1   
+            return "HAM",accuracy_on_test_data1, accuracy_on_training_data1, timer_data
+        return "SPAM",accuracy_on_test_data1, accuracy_on_training_data1, timer_data  
 
     elif(dsNumber==2):
         input_data_features = feature_extraction2.transform(input_mail)
         prediction = model2.predict(input_data_features)
         if prediction == 1 :
-            return "HAM",accuracy_on_test_data2, accuracy_on_training_data2
-        return "SPAM",accuracy_on_test_data2, accuracy_on_training_data2
+            return "HAM",accuracy_on_test_data2, accuracy_on_training_data2, timer_data
+        return "SPAM",accuracy_on_test_data2, accuracy_on_training_data2, timer_data
     else:
-        return "-1", None , None 
-    
-    
-    
+        return "-1", None , None, None

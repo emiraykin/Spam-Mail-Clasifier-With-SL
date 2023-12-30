@@ -5,7 +5,6 @@ from flask_cors import CORS
 from flask import Flask, render_template, request, flash
 from knn import knn_predict_spam
 
-
 dsNumber=0
 
 classifierApp = Flask(__name__, static_url_path='/static')

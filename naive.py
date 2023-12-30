@@ -1,3 +1,4 @@
+import time
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import chardet
@@ -7,6 +8,7 @@ from sklearn.metrics import accuracy_score
 #Data collection and Preproccessing
 #loading data from csv file to a pandas dataframe
 timer_data = 0
+timer_data2 = 0
 file1 ='dataset1.csv'
 with open(file1, 'rb') as rawdata:
     result = chardet.detect(rawdata.read(100000))
@@ -58,7 +60,7 @@ Y_test1 = Y_test1.astype('int')
 # # Training the model
 
 # # Logistic Regression
-
+tic1 = time.perf_counter()
 model1 = MultinomialNB()
 #training the Naive Bayes model with the training data
 model1.fit(X_train_features1, Y_train1)
@@ -79,6 +81,8 @@ print('Accuracy on training data : ',accuracy_on_training_data1)
 prediction_on_test_data1 = model1.predict(X_test_features1)
 accuracy_on_test_data1 = accuracy_score(Y_test1, prediction_on_test_data1)
 
+toc1 = time.perf_counter()
+timer_data = toc1 - tic1
 
 print('Accuracy on test data : ',accuracy_on_test_data1)
 
@@ -134,6 +138,7 @@ Y_test2 = Y_test2.astype('int')
 # # Training the model
 
 # # Logistic Regression
+tic2 = time.perf_counter()
 
 model2 = MultinomialNB()
 #training the Naive Bayes model with the training data
@@ -157,7 +162,8 @@ accuracy_on_test_data2 = accuracy_score(Y_test2, prediction_on_test_data2)
 
 
 print('Accuracy on test data : ',accuracy_on_test_data2)
-
+toc2 = time.perf_counter()
+timer_data2 = toc2 - tic2
 # # Building a Predictive System
 
 
@@ -195,7 +201,7 @@ def naive_predict_spam(input_mail,dsNumber):
         input_data_features = feature_extraction2.transform(input_mail)
         prediction = model2.predict(input_data_features)
         if prediction == 1 :
-            return "HAM",accuracy_on_test_data2, accuracy_on_training_data2, timer_data
-        return "SPAM",accuracy_on_test_data2, accuracy_on_training_data2, timer_data
+            return "HAM",accuracy_on_test_data2, accuracy_on_training_data2, timer_data2
+        return "SPAM",accuracy_on_test_data2, accuracy_on_training_data2, timer_data2
     else:
         return "-1", None , None, None

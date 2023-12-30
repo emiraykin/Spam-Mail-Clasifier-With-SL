@@ -1,7 +1,7 @@
 backend:
-1- Calculate training time for eache model and dataset
+1-  cleaning unncessery comments
 2- 
 
 frontend:
-1- Print training training time for eache model and dataset
+1- 
 2- 

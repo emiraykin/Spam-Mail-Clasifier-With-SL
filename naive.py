@@ -167,28 +167,6 @@ timer_data2 = toc2 - tic2
 # # Building a Predictive System
 
 
-# input_mail=["Hey!What about come to me tonight? We can watch movie together."]
-# #converting text to feature vectors
-# input_data_features = feature_extraction.transform(input_mail)
-# #making prediction
-# prediction = model.predict(input_data_features)
-# print(prediction)
-
-
-# input_mail=["OK, I'm waiting you at the Central Park"]
-# #converting text to feature vectors
-# input_data_features = feature_extraction.transform(input_mail)
-# #making prediction
-# prediction = model.predict(input_data_features)
-# print(prediction)
-
-# input_mail=["Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18"]
-# #converting text to feature vectors
-# input_data_features = feature_extraction.transform(input_mail)
-# #making prediction
-# prediction = model.predict(input_data_features)
-# print(prediction)
-
 def naive_predict_spam(input_mail,dsNumber):
     if(dsNumber==1):
         input_data_features = feature_extraction1.transform(input_mail)

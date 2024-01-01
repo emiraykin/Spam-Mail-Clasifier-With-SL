@@ -1,7 +1,0 @@
-backend:
-1-  cleaning unncessery comments
-2- 
-
-frontend:
-1- 
-2- 

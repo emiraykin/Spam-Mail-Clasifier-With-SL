@@ -157,11 +157,8 @@ toc2 = time.perf_counter()
 timer_data2 = toc2 - tic2
 # # Building a Predictive System 
 
-# input_mail=["Free entry in 2 a wkly comp to win."]
-# #converting text to feature vectors
-# input_data_features = feature_extraction.transform(input_mail)
-# #making prediction
-# prediction = model.predict(input_data_features)
+
+
 # print(prediction)
 def lr_predict_spam(mail,dsNumber):
     if(dsNumber==1):

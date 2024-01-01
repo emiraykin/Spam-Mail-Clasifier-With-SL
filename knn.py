@@ -87,6 +87,9 @@ print('Accuracy on test data : ',accuracy_on_test_data1)
 print("model validated")
 
 
+
+
+
 # FOR DATASET2
 
 file2 ='dataset2.csv'
@@ -119,10 +122,6 @@ Y = df2['label']
 X_train2, X_test2, Y_train2, Y_test2 = train_test_split(X,Y,test_size=0.2,random_state=3)
 
 
-#print(X.shape)
-#print(X_train.shape)
-#print(X_test.shape)
-
 #we will transform the text data to feature vectors that can be used as input to the Logistic Regression Model
 feature_extraction2 = TfidfVectorizer(min_df = 1, stop_words='english', lowercase=True)
 X_train_features2 = feature_extraction2.fit_transform(X_train2)
@@ -131,9 +130,6 @@ X_test_features2= feature_extraction2.transform(X_test2)
 
 Y_train2 = Y_train2.astype('int')
 Y_test2 = Y_test2.astype('int')
-
-
-# print(X_train_features)
 
 # # Training the model
 
@@ -162,31 +158,6 @@ toc2 = time.perf_counter()
 timer_data2= toc2 - tic2        
 
 
-
-# # Building a Predictive System
-
-
-# input_mail=["Hey!What about come to me tonight? We can watch movie together."]
-# #converting text to feature vectors
-# input_data_features = feature_extraction.transform(input_mail)
-# #making prediction
-# prediction = model.predict(input_data_features)
-# print(prediction)
-
-
-# input_mail=["OK, I'm waiting you at the Central Park"]
-# #converting text to feature vectors
-# input_data_features = feature_extraction.transform(input_mail)
-# #making prediction
-# prediction = model.predict(input_data_features)
-# print(prediction)
-
-# input_mail=["Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18"]
-# #converting text to feature vectors
-# input_data_features = feature_extraction.transform(input_mail)
-# #making prediction
-# prediction = model.predict(input_data_features)
-# print(prediction)
 
 def knn_predict_spam(input_mail,dsNumber):
     if(dsNumber==1):
